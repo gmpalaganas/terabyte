@@ -26,7 +26,7 @@ mysql> CREATE USER 'terabyte_admin'@'localhost' IDENTIFIED BY 'terabyte';
 
 Grant access on terabyte to terabyte_admin
 ```
-mysql> GRANT ALL PRIVILEGES ON terabyte.* to 'terabyte_admin'@'localhost' WITH GRANT OPTIONS;
+mysql> GRANT ALL PRIVILEGES ON terabyte.* to 'terabyte_admin'@'localhost' WITH GRANT OPTION;
 ```
 
 Quit mysql
