@@ -6,7 +6,7 @@
 Login to mysql using root
 
 ```
-$mysql -u root -p
+$ mysql -u root -p
 ```
 
 
@@ -31,10 +31,11 @@ mysql> GRANT ALL PRIVILEGES ON terabyte.* to 'terabyte_admin'@'localhost' WITH G
 
 Quit mysql
 ```
-mysql>\q
+mysql> \q
 ```
 
 On the root of the project folder, run these commands
 ```
-$ php artisan migrate && php artisan db:seed
+$ php artisan migrate
+$ php artisan db:seed
 ```
