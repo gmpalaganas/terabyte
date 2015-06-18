@@ -18,6 +18,14 @@ class ItemsController extends \BaseController {
 
 	}
 
+	public function showByCategory($id)
+	{
+		$items = Item::where('category_id', '=', $id)->get();
+		$categories = Category::get();
+
+		return View::make('index',compact('items'),compact('categories'));
+	}
+
 
 
 	/**
