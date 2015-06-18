@@ -32,6 +32,30 @@ class ItemsController extends \BaseController {
 		return View::make('items.category',compact('items'),compact('categories'));
 	}
 
+	public function about()
+	{
+		$items = Item::get();
+		$categories = Category::get();
+
+		return View::make('about', compact('items'), compact('categories'));
+	}
+
+	public function add()
+	{
+		$items = Item::get();
+		$categories = Category::get();
+
+		return View::make('add', compact('items'), compact('categories'));
+	}
+
+	public function delete()
+	{
+		$items = Item::get();
+		$categories = Category::get();
+
+		return View::make('delete', compact('items'), compact('categories'));
+	}
+
 
 
 	/**

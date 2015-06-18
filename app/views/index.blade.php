@@ -30,15 +30,22 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				  </button>
-				  <a class="navbar-brand" href="#"><img src="assets/images/logo.jpg" height="90" width="110"  alt="logo"></a>
+				  <a class="navbar-brand" href="/"><img src="assets/images/logo.jpg" height="90" width="110"  alt="logo"></a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<h3>TERABYTE</h3>
 						<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+<<<<<<< HEAD
+                        <li><a href="/about">About</a></li>
+						<li class="dropdown">
+							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+=======
                         <li><a href="#">About</a></li>
 						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a> <ul class="dropdown-menu" role="menu">
+>>>>>>> b70bc0ef6e3fef312255895303acf6d792a6d4bd
 								@foreach($categories as $category)
                                     <li><a class="category-link" value="{{ $category->id }}">{{ $category->name}}</a></li>
                                 @endforeach
@@ -180,7 +187,7 @@
                 <div class="col-sm-6">
                     <ul class="pull-right">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">About</a></li>
                         <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
                     </ul>
                 </div>
