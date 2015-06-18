@@ -30,21 +30,20 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				  </button>
-				  <a class="navbar-brand" href="#"><img src="assets/images/logo.jpg" height="90" width="110"  alt="logo"></a>
+				  <a class="navbar-brand" href="/"><img src="assets/images/logo.jpg" height="90" width="110"  alt="logo"></a>
 				</div>
 
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<h3>TERABYTE</h3>
-						<li class=><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+						<li class=><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Category 1</a></li>
-								<li><a href="#">Category 2</a></li>
-								<li><a href="#">Category 3</a></li>
-								<li><a href="#">Category 4</a></li>
+                                @foreach($categories as $category)
+                                    <li><a href="/{{ $category->id}}">{{ $category->name}}</a></li>
+                                @endforeach
 							</ul>
 						</li>
 					</ul>
@@ -58,11 +57,11 @@
     <div align="center">
         <br><br><br>
         <h1>Delete Item</h1>
-            <?php        
-            echo Form::open(array('action' => 'Controller@method'));
-
-
-            ?>
+             {{ Form::open(array('url' => 'foo/bar')) }}
+                Item Name <br>
+                {{ Form::text('itemName') }} <br><br>
+                {{ Form::submit('Submit') }}
+            {{ Form::close() }}
         <br><br>
     </div> 
 	
@@ -75,7 +74,7 @@
                 <div class="col-sm-6">
                     <ul class="pull-right">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">About</a></li>
                         <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
                     </ul>
                 </div>
