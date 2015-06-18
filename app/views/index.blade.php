@@ -104,8 +104,8 @@
                     <h3>Items</h3>
                     <p>Inventory</p>
                     <div class="btn-group">
-                        <a class="btn btn-danger" href="#scroller" data-slide="prev"><i class="icon-angle-left"></i></a>
-                        <a class="btn btn-danger" href="#scroller" data-slide="next"><i class="icon-angle-right"></i></a>
+                        <a href="/add" data-slide="prev"><b>Add Item</b></a> <br>
+                        <a href="/delete" data-slide="next"><b>Delete Item</b></a>
                     </div>
                     <p class="gap"></p>
                 </div>
