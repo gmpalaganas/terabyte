@@ -49,23 +49,32 @@ class ItemsController extends \BaseController {
 	public function store()
 	{
 		$inputs = Input::all();
-//$items = new Item();
 		$items= array('name' => $inputs['itemName'],
 					'price' => $inputs['itemPrice'],
 					'category_id' => $inputs['itemCategoryId']);
 		
 		Item::insert($items);
-		//return View::make('list', compact('inputs'));;
+		
 		return Redirect::to('/');
 	}
 
-
 	public function delete()
 	{
-		$items = Item::get();
 		$categories = Category::get();
 
-		return View::make('delete', compact('items'), compact('categories'));
+		return View::make('delete', compact('categories'));
+	}
+
+	public function postDelete()
+	{
+		$inputs = Input::all();
+		$items = new Item();
+		$items->name = $inputs['itemName'];
+
+		Item::where('name', $inputs['itemName'])->delete();
+
+		return Redirect::to('/');		
+
 	}
 
 

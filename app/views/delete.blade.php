@@ -57,7 +57,7 @@
     <div align="center">
         <br><br><br>
         <h1>Delete Item</h1>
-             {{ Form::open(array('url' => 'foo/bar')) }}
+             {{ Form::open(array('action' => 'ItemsController@postDelete')) }}
                 Item Name <br>
                 {{ Form::text('itemName') }} <br><br>
                 {{ Form::submit('Submit') }}
