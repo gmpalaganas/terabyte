@@ -10,20 +10,26 @@ class ItemsController extends \BaseController {
 	public function index()
 	{
 
-		$items = Item::get();
-		$categories = Category::get();
-		
-		return View::make('index', compact('items'), compact('categories'));
+        $items = Item::join('categories','items.category_id','=','categories.id')
+            ->select('items.name','items.price','categories.name as category')->get();
+        
+        $categories = Category::all();        
+
+		return View::make('index', compact('items'),compact('categories'));
 
 
 	}
 
 	public function showByCategory($id)
 	{
-		$items = Item::where('category_id', '=', $id)->get();
+        $items = Item::join('categories','items.category_id','=','categories.id')
+            ->where('category_id','=',$id)
+            ->select('items.name','items.price','categories.name as category')
+            ->get();
+
 		$categories = Category::get();
 
-		return View::make('index',compact('items'),compact('categories'));
+		return View::make('items.category',compact('items'),compact('categories'));
 	}
 
 	public function about()

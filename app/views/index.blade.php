@@ -19,10 +19,10 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/images/ico/apple-touch-icon-57-precomposed.png">
+    
+   
 </head><!--/head-->
-<body>
-    <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner">
-        <div class="container">
+<body> <header class="navbar navbar-inverse navbar-fixed-top wet-asphalt" role="banner"> <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
@@ -37,15 +37,20 @@
 					<ul class="nav navbar-nav">
 						<h3>TERABYTE</h3>
 						<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+<<<<<<< HEAD
                         <li><a href="/about">About</a></li>
 						<li class="dropdown">
 							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+=======
+                        <li><a href="#">About</a></li>
+						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a> <ul class="dropdown-menu" role="menu">
+>>>>>>> b70bc0ef6e3fef312255895303acf6d792a6d4bd
 								@foreach($categories as $category)
-                                    <li><a href="/{{ $category->id}}">{{ $category->name}}</a></li>
+                                    <li><a class="category-link" value="{{ $category->id }}">{{ $category->name}}</a></li>
                                 @endforeach
 							</ul>
-						</li>
+					    	</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<p class="text-danger" style="margin: -45px 180px;"></p>
@@ -115,7 +120,7 @@
                     <div id="scroller" class="carousel slide">
                         <div class="carousel-inner">
                             <div class="item active">
-                                <div class="row">
+                                <div class="row" id="items-div">
                                     @foreach($items as $item)
                                     <div class="col-xs-4">
                                         <div class="portfolio-item">
@@ -124,6 +129,7 @@
                                                 <h5>
                                                     {{ $item->name }}
                                                 </h5>
+                                                <h6> {{ $item->category }} </h6>
                                                 <h6> Php {{$item->price}} </h6>
                                             </div>
                                         </div>
@@ -193,5 +199,31 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/jquery.prettyPhoto.js"></script>
     <script src="assets/js/main.js"></script>
+ 
+    <script>
+        function loadXMLDoc(category_id){
+            var xmlhttp;
+            xmlhttp = new XMLHttpRequest();
+            
+            xmlhttp.onreadystatechange = function(){
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                    document.getElementById("items-div").innerHTML = xmlhttp.responseText;
+            }
+            xmlhttp.open("GET","/" + category_id,true);
+            xmlhttp.send();
+        }
+
+        function categoryOnClick(id){
+            return function(){ loadXMLDoc(id) };
+        }
+
+        var categories = document.getElementsByClassName('category-link');
+        for( i = 0; i < categories.length; i++){
+            var id = categories[i].getAttribute("value");
+            categories[i].addEventListener("click",categoryOnClick(id));
+        }
+
+
+    </script>
 </body>
 </html>
