@@ -58,10 +58,11 @@
     <div align="center">
         <br><br><br>
         <h1>Delete Item</h1>
-        Item Name:<br>
-        <input type="text" name="itemname">
-        <br><br>
-        <input type="submit" value="Submit">
+            <?php        
+            echo Form::open(array('action' => 'Controller@method'));
+
+
+            ?>
         <br><br>
     </div> 
 	

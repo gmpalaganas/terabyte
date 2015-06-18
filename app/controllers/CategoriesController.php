@@ -1,6 +1,6 @@
 <?php
 
-class CategoriesController extends \BaseController {
+class CategoriesController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,9 +9,9 @@ class CategoriesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$categories = Category::get();
+        $categories = Category::all();
 		
-		return View::make('index', compact('categories'));
+		return View::make('category.index', array( 'categories' => $categories ));
 	}
 
 
@@ -45,7 +45,9 @@ class CategoriesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+        $items = Item::where('category_id','=',$id);    
+
+        return View::make('category.show',array('items' => $items));
 	}
 
 
