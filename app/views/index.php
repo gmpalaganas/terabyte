@@ -15,7 +15,6 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="assets/images/upsdclogo.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
@@ -173,7 +172,7 @@
                                             <div class="item-inner">
                                                 <img class="img-responsive" src="assets/images/items/6.jpg" alt="">
                                                 <h5>
-                                                    Keyboard 1
+                                                    Keyboard 2
                                                 </h5>
                                             </div>
                                         </div>
@@ -254,13 +253,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; <a target="_blank" href="https://www.facebook.com/justarrogance?fref=ts" >Cozee Internship Team</a> (2015) All Rights Reserved.
+                    &copy; <a target="_blank" href="" >Cozee Internship Team</a> (2015) All Rights Reserved.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">About Us</a></li>
-						<li><a href="#">Contact Us</a></li>
                         <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
                     </ul>
                 </div>
