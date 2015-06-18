@@ -118,7 +118,7 @@
                                     <div class="col-xs-4">
                                         <div class="portfolio-item">
                                             <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/1.jpg" alt="">
+                                                <img class="img-responsive" src="assets/images/items/{{ $item->category_id }}.jpg" alt="">
                                                 <h5>
                                                     {{ $item->name }}
                                                 </h5>
