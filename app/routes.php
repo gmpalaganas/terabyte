@@ -12,3 +12,11 @@
 */
 
 Route::get('/', 'ItemsController@index');
+
+#Category Routes
+//Route::get('/category/{id}','CategoriesController@show');
+//Route::get('/category','CategoriesController@index');
+
+Route::resource('category','CategoriesController',
+                array('only' => array('index','show'))
+               );
