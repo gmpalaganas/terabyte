@@ -37,15 +37,8 @@
 					<ul class="nav navbar-nav">
 						<h3>TERABYTE</h3>
 						<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-<<<<<<< HEAD
-                        <li><a href="/about">About</a></li>
-						<li class="dropdown">
-							<a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a>
-							<ul class="dropdown-menu" role="menu">
-=======
-                        <li><a href="#">About</a></li>
+                       <li><a href="#">About</a></li>
 						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a> <ul class="dropdown-menu" role="menu">
->>>>>>> b70bc0ef6e3fef312255895303acf6d792a6d4bd
 								@foreach($categories as $category)
                                     <li><a class="category-link" value="{{ $category->id }}">{{ $category->name}}</a></li>
                                 @endforeach
@@ -125,7 +118,7 @@
                                     <div class="col-xs-4">
                                         <div class="portfolio-item">
                                             <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/{{ $item->category_id }}.jpg" alt="">
+                                                <img class="img-responsive" src="assets/images/items/{{ $item->category }}.jpg" alt="">
                                                 <h5>
                                                     {{ $item->name }}
                                                 </h5>
