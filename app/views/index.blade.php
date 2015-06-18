@@ -36,8 +36,8 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<h3>TERABYTE</h3>
-						<li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
-                       <li><a href="#">About</a></li>
+						<li class="active"><a href="">Home<span class="sr-only">(current)</span></a></li>
+                       <li><a href="/about">About</a></li>
 						<li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a> <ul class="dropdown-menu" role="menu">
 								@foreach($categories as $category)
                                     <li><a class="category-link" value="{{ $category->id }}">{{ $category->name}}</a></li>
@@ -179,8 +179,8 @@
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
                         <li><a id="gototop" class="gototop" href="#"><i class="icon-chevron-up"></i></a></li><!--#gototop-->
                     </ul>
                 </div>
