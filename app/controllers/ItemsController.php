@@ -34,19 +34,31 @@ class ItemsController extends \BaseController {
 
 	public function about()
 	{
-		$items = Item::get();
 		$categories = Category::get();
 
-		return View::make('about', compact('items'), compact('categories'));
+		return View::make('about', compact('categories'));
 	}
 
 	public function add()
 	{
-		$items = Item::get();
 		$categories = Category::get();
 
-		return View::make('add', compact('items'), compact('categories'));
+		return View::make('add', compact('categories'));
 	}
+
+	public function store()
+	{
+		$inputs = Input::all();
+//$items = new Item();
+		$items= array('name' => $inputs['itemName'],
+					'price' => $inputs['itemPrice'],
+					'category_id' => $inputs['itemCategoryId']);
+		
+		Item::insert($items);
+		//return View::make('list', compact('inputs'));;
+		return Redirect::to('/');
+	}
+
 
 	public function delete()
 	{
@@ -69,15 +81,7 @@ class ItemsController extends \BaseController {
 	}
 
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+	
 
 
 	/**
