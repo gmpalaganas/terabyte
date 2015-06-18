@@ -41,10 +41,9 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Category 1</a></li>
-								<li><a href="#">Category 2</a></li>
-								<li><a href="#">Category 3</a></li>
-								<li><a href="#">Category 4</a></li>
+								@foreach($categories as $category)
+                                    <li><a href="#">{{ $category->name}}</a></li>
+                                @endforeach
 							</ul>
 						</li>
 					</ul>
@@ -117,13 +116,15 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="row">
+                                    @foreach($items as $item)
                                     <div class="col-xs-4">
                                         <div class="portfolio-item">
                                             <div class="item-inner">
                                                 <img class="img-responsive" src="assets/images/items/1.jpg" alt="">
                                                 <h5>
-                                                    Asus Monitor
+                                                    {{ $item->name }}
                                                 </h5>
+                                                <h6> Php {{$item->price}} </h6>
                                             </div>
                                         </div>
                                     </div>                            
@@ -207,6 +208,8 @@
                                             </div>
                                         </div>
                                     </div>
+                                    </div> 
+                                    @endforeach                           
                                 </div><!--/.row-->
                             </div><!--/.item-->
                         </div>
