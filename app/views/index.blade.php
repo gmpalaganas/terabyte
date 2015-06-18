@@ -125,11 +125,12 @@
                                                 <h5>
                                                     {{ $item->name }}
                                                 </h5>
+                                                <h6> Php {{$item->price}} </h6>
                                             </div>
                                         </div>
                                     </div> 
                                     @endforeach                           
-                                                                    </div><!--/.row-->
+                                </div><!--/.row-->
                             </div><!--/.item-->
                         </div>
                     </div>
