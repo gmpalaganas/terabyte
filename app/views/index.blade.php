@@ -42,10 +42,9 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View By Category<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Category 1</a></li>
-								<li><a href="#">Category 2</a></li>
-								<li><a href="#">Category 3</a></li>
-								<li><a href="#">Category 4</a></li>
+								@foreach($categories as $category)
+                                    <li><a href="#">{{ $category->name}}</a></li>
+                                @endforeach
 							</ul>
 						</li>
 					</ul>
@@ -118,97 +117,19 @@
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="row">
+                                    @foreach($items as $item)
                                     <div class="col-xs-4">
                                         <div class="portfolio-item">
                                             <div class="item-inner">
                                                 <img class="img-responsive" src="assets/images/items/1.jpg" alt="">
                                                 <h5>
-                                                    Asus Monitor
+                                                    {{ $item->name }}
                                                 </h5>
                                             </div>
                                         </div>
-                                    </div>                            
-                                    <div class="col-xs-4">
-                                        <div class="portfolio-item">
-                                            <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/2.jpg" alt="">
-                                                <h5>
-                                                    Acer Monitor
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>                            
-                                    <div class="col-xs-4">
-                                        <div class="portfolio-item">
-                                            <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/3.jpg" alt="">
-                                                <h5>
-                                                    Wireless Mouse
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div class="col-xs-4">
-                                        <div class="portfolio-item">
-                                            <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/4.jpg" alt="">
-                                                <h5>
-                                                    MMs Mouse
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                   <div class="col-xs-4">
-                                        <div class="portfolio-item">
-                                            <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/5.jpg" alt="">
-                                                <h5>
-                                                    Keyboard 1
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <div class="portfolio-item">
-                                            <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/6.jpg" alt="">
-                                                <h5>
-                                                    Keyboard 1
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <div class="portfolio-item">
-                                            <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/7.jpg" alt="">
-                                                <h5>
-                                                    Gamers Keyboard
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <div class="portfolio-item">
-                                            <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/8.jpg" alt="">
-                                                <h5>
-                                                    Core 2 Duo Processor
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-4">
-                                        <div class="portfolio-item">
-                                            <div class="item-inner">
-                                                <img class="img-responsive" src="assets/images/items/9.jpg" alt="">
-                                                <h5>
-                                                    Creative Speakers
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!--/.row-->
+                                    </div> 
+                                    @endforeach                           
+                                                                    </div><!--/.row-->
                             </div><!--/.item-->
                         </div>
                     </div>
